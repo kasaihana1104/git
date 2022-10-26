@@ -15,7 +15,17 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('musictitle')->nullable();
+            $table->string('artist')->nullable();
             $table->timestamps();
+            $table->string('placticeplace')->nullable();
+            $table->string('goal')->nullable();
+            $table->integer('genre_id')->unsigned();
+            $table->integer('dance_type_id')->unsigned();
+            $table->string('url')->nullable();
+            $table->string('sns')->nullable();
+            $table->string('others')->nullable();
+            $table->softDeletes();
         });
     }
 
